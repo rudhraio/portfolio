@@ -1,3 +1,35 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v15-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/poppins-v15-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/poppins-v15-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/poppins-v15-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/poppins-v15-latin-regular.svg#Poppins') format('svg');
+    /* Legacy iOS */
+}
+
+.pattern {
+    background-color: #ffffff;
+    opacity: 0.4;
+    background-image: radial-gradient(#61305D 0.8px, transparent 0.8px), radial-gradient(#61305D 0.8px, #ffffff 0.8px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    position:fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+    z-index: -10;
+
+}
