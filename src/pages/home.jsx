@@ -1,15 +1,17 @@
 import NavMenu from "../components/layout/nav-menu";
+import HeroSection from "../components/sections/hero-section";
 
 function Home() {
     return (
         <>
+
             <section className="pattern"></section>
             <NavMenu />
-            <section className="min-h-screen flex justify-center items-center">
-                <h3 className="text-4xl">
-                    Welcome there 👋
-                </h3>
-            </section>
+            <main className="flex pt-24 sm:px-12 px-6">
+                <HeroSection />
+                
+            </main>
+
         </>
     )
 }
