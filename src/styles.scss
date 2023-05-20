@@ -27,9 +27,16 @@
     background-image: radial-gradient(#61305D 0.8px, transparent 0.8px), radial-gradient(#61305D 0.8px, #ffffff 0.8px);
     background-size: 32px 32px;
     background-position: 0 0, 16px 16px;
-    position:fixed;
+    position: fixed;
     min-height: 100vh;
     min-width: 100vw;
     z-index: -10;
+}
 
+.solid-shadow {
+    box-shadow: 0.5rem 0.5rem black
+}
+
+.solid-shadow-white {
+    box-shadow: 0.5rem 0.5rem white
 }

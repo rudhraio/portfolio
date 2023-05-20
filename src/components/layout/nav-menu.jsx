@@ -1,7 +1,7 @@
 function NavMenu() {
     return (
         <>
-            <nav className="py-6 bg-white fixed min-w-full border-b">
+            <nav className="py-6 bg-white fixed min-w-full">
                 <div className="sm:px-12 px-6 flex items-center min-h-min">
                     <div className="flex flex-row justify-between w-full items-center">
                         <div>
