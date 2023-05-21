@@ -1,4 +1,7 @@
-import { createRef, useState } from "react";
+import { useState } from "react";
+import linkedin from "@/assets/images/linkedin.svg";
+import github from "@/assets/images/linkedin.svg";
+import menu from "@/assets/images/menu.svg";
 
 function NavMenu() {
     // dropdown props
@@ -28,10 +31,10 @@ function NavMenu() {
                         <div>
                             <div className="flex flex-row gap-x-6">
                                 <a href="https://github.com/rudhraio" target="_blank">
-                                    <img src="src/assets/images/github.svg" alt="hero-section" />
+                                    <img src={github} alt="hero-section" />
                                 </a>
                                 <a href="https://www.linkedin.com/in/rudhra-kuruvella-9576101b9" target="_blank">
-                                    <img src="src/assets/images/linkedin.svg" alt="hero-section" />
+                                    <img src={linkedin} alt="hero-section" />
                                 </a>
                                 <div className="relative inline-block sm:hidden text-left">
                                     <button
@@ -41,7 +44,7 @@ function NavMenu() {
                                         aria-expanded="true"
                                         aria-haspopup="true"
                                     >
-                                        <img src="src/assets/images/menu.svg" alt="hero-section" className="w-6 h-6" />
+                                        <img src={menu} alt="hero-section" className="w-6 h-6" />
                                     </button>
 
                                     {isOpen && (

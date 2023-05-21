@@ -1,6 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 
 @font-face {
     font-family: 'Poppins';
@@ -40,30 +42,3 @@
 .solid-shadow-white {
     box-shadow: 0.5rem 0.5rem white
 }
-
-// For Drop Down Start
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-.dropdown-content a {
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-// END
