@@ -54,13 +54,14 @@ jobs:
       - name: Deploy
         run: echo "Deploying..."
 
+
       - name: Remove old build
         run: |
-          sshpass -p ${{ env.PASSWORD }} ssh ${{env.NAME}}@${{ secrets.HOST }} 'rm -rf ~/htdocs/rudhra.io/*'
+          sshpass -p ${{ env.PASSWORD }} ssh -o StrictHostKeyChecking=no ${{env.NAME}}@${{ secrets.HOST }} 'rm -rf ~/htdocs/rudhra.io/*'
 
       - name: Deploy to server
         run: |
-          sshpass -p ${{ env.PASSWORD }} scp -r build-files/* ${{env.NAME}}@${{ secrets.HOST }}:~/htdocs/rudhra.io/
+          sshpass -p ${{ env.PASSWORD }} scp -o StrictHostKeyChecking=no -r build-files/* ${{env.NAME}}@${{ secrets.HOST }}:~/htdocs/rudhra.io/
 
       - name: Deploy
         run: echo "Deployed Successfully"
