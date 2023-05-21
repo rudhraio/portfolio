@@ -1,6 +1,6 @@
 function Projects() {
     return (<>
-        <section className="mt-12 md:mx-12 mx-2">
+        <section className="mt-12 md:mx-12 mx-2" id="work">
             <div>
                 <div>
                     <h4 className="text-6xl uppercase">

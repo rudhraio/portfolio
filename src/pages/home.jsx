@@ -4,6 +4,7 @@ import HeroSection from "../components/sections/hero-section";
 import Skills from "../components/sections/skills";
 import Projects from "../components/sections/projects";
 import ContactMe from "../components/sections/contact-me";
+import FooterSection from "../components/sections/footer";
 
 function Home() {
     return (
@@ -17,9 +18,8 @@ function Home() {
                 <Skills />
                 <Projects />
                 <ContactMe />
-                
             </main>
-            <section className="min-h-[36rem]"></section>
+            <FooterSection />
 
         </>
     )

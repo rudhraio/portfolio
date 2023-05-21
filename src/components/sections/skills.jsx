@@ -8,7 +8,7 @@ function Skills() {
 
     return (<>
 
-        <section className="mt-12 md:mx-12 mx-2">
+        <section className="mt-12 md:mx-12 mx-2" id="skills">
             <div>
                 <div>
                     <h4 className="text-6xl uppercase">

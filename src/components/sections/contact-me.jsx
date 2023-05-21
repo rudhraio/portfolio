@@ -1,13 +1,13 @@
 function ContactMe() {
     return (
-        <section className="mt-12 md:mx-12 mx-2">
+        <section className="mt-12 md:mx-12 mx-2" id="contact-me">
             <div>
                 <div>
                     <h4 className="text-6xl uppercase">
-                        GET IN TOUCH
+                        GET IN TOUCH.
                     </h4>
                 </div>
-                <div className="p-6 flex flex-row mt-6 gap-6 justify-around items-center bg-black bg-opacity-90">
+                <div className="p-6 flex lg:flex-row flex-col mt-6 gap-12 lg:gap-6 justify-around items-center bg-black bg-opacity-90">
                     <div className="flex flex-col gap-y-16">
                         <div>
                             <h5 className="text-5xl font-bold text-white">
@@ -27,18 +27,21 @@ function ContactMe() {
                     </div>
 
                     <div>
-                        <div className="flex flex-col gap-y-6">
+                        <div className="flex flex-col gap-6">
                             <div className="flex flex-col">
                                 <label htmlFor="" className="text-xl text-white mb-2">Name</label>
-                                <input type="text" className="text-3xl p-3 py-4 border min-w-[36rem]" />
+                                <input type="text" className="text-3xl p-3 py-4 border min-w-[32rem]" />
                             </div>
                             <div className="flex flex-col">
                                 <label htmlFor="" className="text-xl text-white mb-2">Email</label>
-                                <input type="text" className="text-3xl p-3 py-4 border min-w-[36rem]" />
+                                <input type="text" className="text-3xl p-3 py-4 border min-w-[32rem]" />
                             </div>
                             <div className="flex flex-col">
                                 <label htmlFor="" className="text-xl text-white mb-2">Message</label>
-                                <textarea type="text" className="text-3xl p-3 py-4 border min-w-[36rem]" rows={5}> </textarea>
+                                <textarea type="text" className="text-3xl p-3 py-4 border min-w-[32rem]" rows={5}></textarea>
+                            </div>
+                            <div className="float-left ms-auto">
+                                <button className="bg-white py-4 px-6 font-bold text-base">Submit</button>
                             </div>
                         </div>
                     </div>

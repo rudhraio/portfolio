@@ -1,0 +1,64 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ env.CACHE_KEY }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: rudhra
+    env:
+      HOST: ${{ secrets.HOST }}
+      USER: ${{ secrets.USER }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      PORT: ${{ secrets.PORT }}
+      NAME: deploy-server
+    steps:
+      - name: Install SSH client
+        run: sudo apt-get install openssh-client -y
+
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+          path: build-files
+
+      - name: Deploy
+        run: echo "Deploying..."
+
+      - name: Remove old build
+        run: |
+          sshpass -p ${{ env.PASSWORD }} ssh ${{env.NAME}}@${{ secrets.HOST }} 'rm -rf ~/htdocs/rudhra.io/*'
+
+      - name: Deploy to server
+        run: |
+          sshpass -p ${{ env.PASSWORD }} scp -r build-files/* ${{env.NAME}}@${{ secrets.HOST }}:~/htdocs/rudhra.io/
+
+      - name: Deploy
+        run: echo "Deployed Successfully"

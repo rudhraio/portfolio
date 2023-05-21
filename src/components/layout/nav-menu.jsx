@@ -1,4 +1,12 @@
+import { createRef, useState } from "react";
+
 function NavMenu() {
+    // dropdown props
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <>
             <nav className="py-6 bg-white fixed min-w-full">
@@ -12,29 +20,71 @@ function NavMenu() {
                         <div>
                             <div className="sm:flex flex-row gap-x-12 md:gap-x-24 hidden">
                                 <a href="#" className="text-xl">Home</a>
-                                <a href="#" className="text-xl">About</a>
-                                <a href="#" className="text-xl">Skills</a>
-                                <a href="#" className="text-xl">Work</a>
+                                <a href="#about-me" className="text-xl">About</a>
+                                <a href="#skills" className="text-xl">Skills</a>
+                                <a href="#work" className="text-xl">Work</a>
                             </div>
                         </div>
                         <div>
                             <div className="flex flex-row gap-x-6">
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0l-3-3m3 3l3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
-                                    </svg>
+                                <a href="https://github.com/rudhraio" target="_blank">
+                                    <img src="src/assets/images/github.svg" alt="hero-section" />
                                 </a>
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                                    </svg>
+                                <a href="https://www.linkedin.com/in/rudhra-kuruvella-9576101b9" target="_blank">
+                                    <img src="src/assets/images/linkedin.svg" alt="hero-section" />
                                 </a>
-                                <a href="#" className="sm:hidden block">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                    </svg>
+                                <div className="relative inline-block sm:hidden text-left">
+                                    <button
+                                        onClick={toggleDropdown}
+                                        type="button"
+                                        id="dropdown-menu-button"
+                                        aria-expanded="true"
+                                        aria-haspopup="true"
+                                    >
+                                        <img src="src/assets/images/menu.svg" alt="hero-section" className="w-6 h-6" />
+                                    </button>
 
-                                </a>
+                                    {isOpen && (
+                                        <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                            <div
+                                                className="py-1"
+                                                role="menu"
+                                                aria-orientation="vertical"
+                                                aria-labelledby="dropdown-menu-button"
+                                            >
+                                                <a
+                                                    href="#"
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                    role="menuitem"
+                                                >
+                                                    Home
+                                                </a>
+                                                <a
+                                                    href="#about-me"
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                    role="menuitem"
+                                                >
+                                                    About
+                                                </a>
+                                                <a
+                                                    href="#skills"
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                    role="menuitem"
+                                                >
+                                                    Skills
+                                                </a>
+                                                <a
+                                                    href="#work"
+                                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                                    role="menuitem"
+                                                >
+                                                    Work
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+
                             </div>
 
                         </div>

@@ -14,7 +14,7 @@ function HeroSection() {
                     </p>
                 </div>
                 <div className="">
-                    <img src="https://picsum.photos/seed/picsum/500/600" alt="hero-section" className="rounded-md shadow-lg" />
+                    <img src="src/assets/images/rudhra.png" alt="hero-section" className="rounded-md max-h max-h-[38rem]" />
                 </div>
             </div>
         </section>
