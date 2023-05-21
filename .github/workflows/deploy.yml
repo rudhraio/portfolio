@@ -40,9 +40,6 @@ jobs:
       PORT: ${{ secrets.PORT }}
       NAME: deploy-server
     steps:
-      - name: Install SSH client
-        run: sudo apt-get install openssh-client -y
-
       - name: Get build artifacts
         uses: actions/download-artifact@v3
         with:
