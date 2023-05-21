@@ -40,6 +40,11 @@ jobs:
       PORT: ${{ secrets.PORT }}
       NAME: deploy-server
     steps:
+      - name: Install SSH client and sshpass
+        run: |
+          sudo apt-get install openssh-client -y
+          sudo apt-get install sshpass -y
+
       - name: Get build artifacts
         uses: actions/download-artifact@v3
         with:
