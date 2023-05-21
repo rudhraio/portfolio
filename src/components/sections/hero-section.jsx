@@ -1,6 +1,3 @@
-import rudhra from "@/assets/images/rudhra.png";
-
-
 function HeroSection() {
     return (<>
         <section className="flex w-full">
@@ -17,7 +14,7 @@ function HeroSection() {
                     </p>
                 </div>
                 <div className="">
-                    <img src={rudhra} alt="hero-section" className="rounded-md max-h max-h-[38rem]" />
+                    <img src="assets/images/rudhra.png" alt="hero-section" className="rounded-md max-h max-h-[38rem]" />
                 </div>
             </div>
         </section>
